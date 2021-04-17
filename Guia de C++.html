@@ -94,6 +94,52 @@
 
 						</article>
 				</section>
+				<section class="main-section" id="estructura">
+					<h2>Estructura</h2>
+						<article>
+							<header><h3>Estructura de un programa en C++</h3></header>
+							<p>Para darnos una idea chequemos el siguiente programa</p>
+							<pre>
+								<code>//Mi primer programa en C++</code><br>
+								<code># include <iostream></code><br>
+								<code>using namespace std;</code><br>
+								<code>int main (){</code><br>
+								<code>count <<"hello World";</code><br>
+								<code>return 0;</code><br>
+								<code>}</code>
+							</pre>
+							<p>El programa anterior es tipico de los programadores aprendices, el resultado de un impresion en pantalla es la frase:</p>
+							<pre>
+								<code>"hello World"</code>
+							</pre>
+							<p>Es uno de lo mas simples programas que pueden estar escritos en C++, pero ya contiene los componentes fundamentales que todos los programas escritos en C++. Vamos a  ver linea por linea en el codigo lo que hemos escrito:</p>
+							<pre>
+								<code>//Mi primer programa en C++</code>
+							</pre>
+							<p>Se trata de una lınea de comentario. Todas las lıneas que comiencen con dos signos barra se consideran comentarios y no tienen ningun efecto sobre el comportamiento del programa.<br>
+							El programador puede usar para incluir breves explicaciones o alegaciones dentro del codigo fuente en sı. En este caso, la lınea es una breve descripcion de lo que es nuestro programa.</p>
+							<pre>
+								<code># include <iostream></code>
+							</pre>
+							<p>Las lıneas que comienza con un sımbolo de sostenido # son directivas para el preprocesador. En este caso, la directiva # include <iostream>le dice al preprocesador que incluya el iostream estandar de archivo. Este archivo especıfico (iostream) incluye las declaraciones de la norma basica de entrada y salida de la biblioteca de C++.</p>
+							<pre>
+								<code>using namespace std;</code>
+							</pre>
+							<p>Todos los elementos del modelo de librerıa de C++ se declaran dentro de lo que se denomina un espacio de nombres. Por lo tanto, para poder acceder a su funcionalidad declaramos con esta expresion que vamos a utilizar estas entidades. Esta lınea es muy frecuente en los programas que utilizan la biblioteca estandar, y de hecho sera incluido en la mayorıa de los codigos.</p>
+							<pre>
+								<code>int main ()</code>
+							</pre>
+							<p>Esta lınea se corresponde con el comienzo de la definicion de la funcion principal. La funcion principal es el punto por donde todos los programas inician su ejecucion, independientemente de su ubicacion dentro del codigo fuente. No importa si hay otras funciones con otros nombres definidos antes o despues de las instrucciones que figuran dentro de esta funcion, ya que por definicion sera siempre la primera en ser ejecutada. Por esa misma razon, es esencial que todos los programas tengan una funcion principal. Lo que se contiene dentro de las llaves que delimitan la funcion es lo que hace cuando se ejecuta.</p>
+							<pre>
+								<code>count <<"hello World";</code>
+							</pre>
+							<p>Esta lınea es una declaracion de C++, en terminos simples es una expresion que produce algun efecto. De hecho, esta declaracion lleva a cabo la unica accion que genera un efecto visible en nuestro programa. Representa el flujo de salida y su objetivo es insertar una secuencia de caracteres ( ”hello World”) en el flujo de salida estandar (pantalla)</p>
+							<pre>
+								<code>return 0;</code>
+							</pre>
+							<p>Esta declaracion hace que la funcion pricipal termine. Un codigo de retorno es 0, cuando la funcion principal interpreta de manera general que el programa trabajo como se esperaba, sin ningun error durante su ejecucion. Esta es la forma mas habitual para poner fin a un programa C++ en la consola.</p>
+
+						</article>
 			</main>
 	</body>
 </html>
