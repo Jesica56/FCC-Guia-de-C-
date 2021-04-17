@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="Documentacion Tecnica">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Manual de Git</title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<nav id="navbar">
+			<ul>
+				<li><a class="nav-link" href="#sistema_de_control_de_versiones">Sistema de control de versiones</a></li>
+				<li><a class="nav-link" href="#aspectos_básicos_de_git">Aspectos básicos de Git</a></li>
+				<li><a class="nav-link" href="#uso_basico_de_git">Uso basico de Git</a></li>
+				<li><a class="nav-link" href="#uso_avanzado_de_git">Uso avanzado de Git</a></li>
+				<li><a class="nav-link" href="#ramas">Ramas</a></li>
+				<li><a class="nav-link" href="#flujo_de_trabajo_con_git_(git_glow)">Flujo de trabajo con Git (git flow)</a></li>
+				<li><a class="nav-link" href="#referencia">Referencia</a></li>
+			</ul>
+		</nav>
+			<main id="main-doc">
+				<section class="main-section" id="sistema_de_control_de_versiones">
+					<h2>Sistemas de control de versiones</h2>
+						<article>
+							<header>Definición, clasificación y funcionamiento</header>
+									<p>Se llama control de veriones a la gestión de los diversos cambios que se realizan sobre los elementos de algún producto  una configuración del mismo.Una versión, revisión o edición de un producto, es el estado en el que se encuentra dicho producto en un momento dado de su desarrollo o modificación. Aunque un sistema de control de versiones puede realizarse de forma manual, es muy aconsejable disponer de herramientas que faciliten esta gestión dando lugar a los llamados sistemas de control de versiones o SVC (del inglés System Version Control).<br>
+									Estos sistemas facilitan la administración de las distintas versiones de cada producto desarrollado, así como las posibles especializaciones realizadas (por ejemplo, para algún cliente específico). Ejemplos de este tipo de herramientas son entre otros: CVS, Subversion, SourceSafe, ClearCase, Darcs, Bazaar , Plastic SCM, Git, Mercurial, Perforce</p>
+								<h3>Terminoligia</h3>
+										<ul>
+											<li><strong>Repositorio ("repository")</strong></li>
+											<li><strong>Revisión ("revision")</strong></li>
+											<li><strong>Etiqueta ("tag")</strong></li>
+											<li><strong>Rama ("branch")</strong></li>
+											<li><strong>Cambio ("chenge")</strong></li>
+											<li><strong>Desplegar ("checkout")</strong></li>
+											<li><strong>Confirmar ("commit")</strong></li>
+											<li><strong>Conflicto ("conflict")</strong></li>
+											<li><strong>Cabeza ("head")</strong></li>
+											<li><strong>Fusionar, integrar, mezclar ("merge")</strong></li>
+										</ul>
+								<h3>Clasificación</h3>
+									<p>Podemos clasificar los sistemas de control de versiones atendiendo a la arquitectura utilizada para el almacenamiento del código</p>
+										<ul>
+											<li><strong>Locales</strong> <br>Los cambios son guardados localmente y no se comparten con nadie.</li>
+											<li><strong>Centralizados</strong><br>Existe un repositorio centralizado de todo el codigo, del cual es responsable en un unico usuario (o conjunto de ellos).Se facilitan las tareas administrativas a cambio de reducir flexibilidad, pues todas las decisiones fuertes (como crear una nueva rama) necesitan la aprobación del responsable.</li>
+											<li><strong>Distribuidos</strong><br>Cada usuario tiene su propio repositorio. Los distintos repositorios pueden intercambiar y mezclar revisiones entre ellos. Es frecuente el uso de un repositorio, que está normalmente disponible, que sirve de punto de sincronización de los distintos repositorios locales. Ejemplos: Git y Mercurial.</li>
+										</ul>
+								<h3>Introducción a git</h3>
+									<p>Git es un sistema de control de versiones distribuido que se diferencia del resto en el modo en que modela sus datos. La mayoría de los demás sistemas almacenan la información como una lista de cambios en los archivos, mientras que Git modela sus datos más como un conjunto de instantáneas de un mini sistema de archivos.</p>
+								<h3>Los tres estados</h3>
+									<p>Git tiene tres estados principales en los que se pueden encontrar tus archivos:</p>
+										<ul>
+											<li><strong>Confirmado (committes)</strong></li>
+											<li><strong>Modificado (modified)</strong></li>
+											<li><strong>Preparado (staged)</strong></li>
+										</ul>
+									<p>Esto nos lleva a las tres secciones principales de un proyecto de Git:</p>
+										<ul>
+											<li><strong>El directorio de Git (Git directory)</strong></li>
+											<li><strong>el directorio de trabajo (working directory)</strong></li>
+											<li><strong>Area de preparación (staging area)</strong></li>
+										</ul>
+								<h3>Flujos de trabajo distribuidos con git</h3>
+									<p>Flujos de trabajo comunes en Git:</p>
+										<ul>
+											<li><strong>Flujo de trabajo centralizado</strong><br>Existe un único repositorio o punto central que guarda el código y todo el mundo sincroniza su trabajo con él. Si dos desarrolladores clonan desde el punto central, y ambos hacen cambios; tan solo el primero de ellos en enviar sus cambios de vuelta lo podrá hacer limpiamente. El segundo desarrollador deberá fusionar previamente su trabajo con el del primero, antes de enviarlo, para evitar el sobreescribir los cambios del primero</li>
+											<li><strong>Flujo de trabajo del Gestor-de-Integraciones</strong><br>Al permitir multiples repositorios remotos, en Git es posible tener un flujo de trabajo donde cada desarrollador tenga acceso de escritura a su propio repositorio público y acceso de lectura a los repositorios de todos los demás. Habitualmente, este escenario suele incluir un repositorio canónico, representante "oficial" del proyecto. Este modelo se puso muy de moda a raíz de la forja GitHub.</li>
+											<li><strong>Flujo de trabajo con Dictador y Tenientes</strong><br>Es una variante del flujo de trabajo con multiples repositorios. Se utiliza generalmente en proyectos muy grandes, con cientos de colaboradores. Un ejemplo muy conocido es el del kernel de Linux. Unos gestores de integración se encargan de partes concretas del repositorio; y se denominan tenientes. Todos los tenientes rinden cuentas a un gestor de integración; conocido como el dictador benevolente. El repositorio del dictador benevolente es el repositorio de referencia, del que recuperan (pull) todos los colaboradores.</li>
+										</ul>	
+						</article>
+				</section>
+			</main>
+	</body>
+</html>
