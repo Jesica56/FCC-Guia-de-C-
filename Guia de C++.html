@@ -155,6 +155,87 @@
 								</ul>
 								<p>Ahora hablemos de los <strong>tipos de datos</strong> que reconoce C++. Estos definen el modo en que se usa el espacio (memoria) en los programas. Al especificar un tipo de datos, estamos indicando al compilador como crear un espacio de almacenamiento en particular, y tambien como manipular este espacio. Un tipo de dato define el posible rango de valores que una variable puede tomar al momento de ejecucion del programa y a lo largo de toda la vida util del propio programa.</p>
 								<p>Los tipos de datos pueden ser <strong>predefinidos o abstractos</strong>. Un tipo de dato <em>predefinido</em> es intrınsecamente comprendido por el compilador. En contraste, un tipo de datos definido por el usuario es aquel que usted o cualquier otro programador crea como una clase, que comunmente son llamados tipos de datos <em>abstractos</em>.</p>
+								<em>Los tipos de datos mas comunes en C++ son:</em>
+									<table class="default">
+										<tr>
+											<td>Tipo de Datos</td>
+											<td>Espacios en Memoria</td>
+											<td>Rango</td>
+										</tr>
+										<tr>
+											<td>unsigned char</td>
+											<td>8 bits</td>
+											<td>0 a 255</td>
+										</tr>
+										<tr>
+											<td>char</td>
+											<td>8 bits</td>
+											<td>-128 a 127</td>
+										</tr>
+										<tr>
+											<td>short int</td>
+											<td>16 bits</td>
+											<td>-32,768 a 32,767</td>
+										</tr>
+										<tr>
+											<td>unsigned int</td>
+											<td>32 bits</td>
+											<td>0 a 4,294,967,295</td>
+										</tr>
+										<tr>
+											<td>int</td>
+											<td>32 bits</td>
+											<td>-2,147,483,648 a 2,147,483,647</td>
+										</tr>
+										<tr>
+											<td>unsigned int</td>
+											<td>32 bits</td>
+											<td>0 a 4,294,967,295</td>
+										</tr>
+										<tr>
+											<td>enum</td>
+											<td>16 bits</td>
+											<td>-2,147,483,648 a 2,147,483,647</td>
+										</tr>
+										<tr>
+											<td>long</td>
+											<td>32 bits</td>
+											<td>-2,147,483,648 a 2,147,483,647</td>
+										</tr>
+										<tr>
+											<td>float</td>
+											<td>32 bits</td>
+											<td>3.4 x 10-38 a 3.4 x 10+38(6 dec)</td>
+										</tr>
+										<tr>
+											<td>double</td>
+											<td>64 bits</td>
+											<td>1.7 x 10-308 a 1.7*10+308(15 dec</td>
+										</tr>
+										<tr>
+											<td>log double</td>
+											<td>80 bits</td>
+											<td>3.4 x 10-4932 a 1.1 x 10+4932</td>
+										</tr>
+										<tr>
+											<td>void</td>
+											<td>sin valor</td>
+											<td></td>
+										</tr>
+									</table>
+									<p>Cuando nuestro programa contiene operaciones binarias con operandos de distintos tipos, estos se convierten a un tipo en comun, en general para conversiones explıcitas C++ hace uso del casting, lo que nos permite tener mas presicion en aquellos casos en los que el resultado de la operacion no es un int y la variuable receptora sı lo es.</p>
+									<p>Algunas reglas que controlan estas conversiones son las siguientes:</p>
+									<ul>
+										<li> Cualquier tipo entero pequeño como char o short sera convertido a int o unsigned int.</li>
+										<li>Si algun operando es de tipo long double, el otro se convertira a long double.</li>
+										<li>Si algun operando es de tipo double, el otro se convertira a double.</li>
+										<li>Si algun operando es de tipo float, el otro se convertira a float.</li>
+										<li>Si algun operando es de tipo unsigned long long, el otro se convertira a unsigned long long.</li>
+										<li>Si algun operando es de tipo unsigned long long, el otro se convertira a unsigned long long.</li>
+										<li>Si algun operando es de tipo unsigned long, el otro se convertira a unsigned long.</li>
+										<li>Si algun operando es de tipo long, el otro se convertira a long</li>
+										<li>Si algun operando es de tipo unsigned int, el otro se convertira a unsigned int.</li>
+									</ul>
 						</article>
 				</section>
 			</main>
