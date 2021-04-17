@@ -11,7 +11,7 @@
 		<nav id="navbar">
 			<ul>
 				<li><a class="nav-link" href="#introducción">Introducción</a></li>
-				<li><a class="nav-link" href="#C++_en_entorno_linux">C++ en entorno Linux</a></li>
+				<li><a class="nav-link" href="#c++_en_entorno_linux">C++ en entorno Linux</a></li>
 				<li><a class="nav-link" href="#estructura">Estructura</a></li>
 				<li><a class="nav-link" href="#variables_y_tipos_datos">Variables y Tipos datos</a></li>
 				<li><a class="nav-link" href="#espacios_de_nombres_en_C++">Esapcios de nombres en C++</a></li>
@@ -35,9 +35,65 @@
 										<li>Programación Orientada a Objetos</li>
 									</ul>
 								<p>En la actualidad, C++ es un lenguaje versátil, potente y general. Su exito entre los programadores le ha llevado a ocupar el primer puesto como herramienta de desarrollo de aplicaciones</p>
+						</article>
+				</section>
+				<section class="main-section" id="c++_en_entorno_linux">
+					<h2>C++ en un entorno</h2>
+						<article>
+							<header><h3>En Linux</h3></header>
+								<p>Los programas se pueden escribir en cualquier editor de textos de GNU, entre ellos se encuentran <em>emacs, vim, kate, gedit, nan,</em> guardando dichos archivos con extensiÓn <em>.cpp</em>, los cuales seran compilados en GNU/linux utilizando el compilador GNU de C++, llamado <em>gcc</em> que puede compilar C, C++, y que ademas se apega al estandar ANSI, permitiendo la portabilidad de estos codigos. Dicho compilador se invoca con el comando <em>gcc</em>.</p>
+								<p>Para copilar ponemos la sguiente liena en una terminal previamente ubicada en el directorio que contiene nuestro archivo:</p>
+								<pre>
+									<code>g++ programa.cpp -o programa.out</code>
+								</pre>
+								<p>-o indica el nombre del archivo de salida el cual sera el ejecutable de nuestro proyecto.</p>
+								<p>Luego para ejecutar, escribimos sobre la linea de comandos:</p>
+								<pre>
+									<code>./programa.out</code>
+								</pre>
+								<p>y entonces ponemos ejecutar programa</p>
+								<p>Cuando creamos pequeños programas la compilacion de estos es muy facil, pero cuando se trabaja con proyectos grandes, con varios archivos fuente la compilacion resulta mas dificil, por lo que Linux proporciona la utilerıa make de GNU, el cual busca un archivo make donde encontrara toda la informacion que necesita para crear el ejecutable, si encuentra el archivo busca la palabra makefile o Makefile, que son nombres predeterminados.</p>
+								<p>Los archivos make contienen informacion acerca de la compilacion y enlace del programa, con una sintaxis muy especifica. Un makefile se define como una lista de normas y dependencias con sus correspondientes comandos para crear objetivos, utilizando dichas normas y dependencias.</p>
+								<p>Un archivo Makefile es un archivo de texto en el cual se distinguen cuatro tipos basicos de declaraciones:</p>
+									<ul>
+										<li>Comentario: Los comentarios se iniciaan con el caracter #, y se ignora todo lo que contiene despues de ella, hasta el final</li>
+										<li>Variables: Se define usando el siguiente formato:<br>
+											<code>nombre=dato</code></li>
+										<li>Reglas Explicitas: Estas le indican a make que archivos depende de otros, asi como los comandos requeridos para coompilar un archivo en particular. Ejemplo:<br>
+											<code>main: main.c funciones.h</code><br>
+											<code>gcc -o main main.c funciones.h</code></li>
+										<li>Reglas Implicitas: Son similares a las reglas explıcitas, pero no indican los comandos a ejecutar, sino que make utiliza los sufijos (extensiones de los archivos) para determinar que comandos ejecutar. Por ejemplo:<br>
+											<code>funciones.o: funciones.c funciones.h</code><br> origina la siguiente linea:<br>
+											<code>$(CC) $(CFLAGS) c funciones.c funciones.h</code><br>
+										Existe un conjunto de variables que se emplean para las reglas implıcitas, y existen dos categorıas: aquellas que son nombres de programas (como CC) y aquellas que tienen los argumentos para los programas (como CFLAGS).</li>
+									</ul>
+								<p>Ejemplo de Makefile</p>
+								<pre>
+									<code>CPPFLAGS=</code><br>
+									<code>CCPPLIBS=</code><br>
+									<code>main: Conjunto.o main.o</code><br>
+									<code>g++ -o main main.o Conjunto.o $(CPPLIGS)</code>
+								</pre>
+								<pre>
+									<code>Conjunto.o: Conjunto.cpp Conjunto.h</code><br>
+									<code>g++ $(CPPFLAGS) -c -o Conjunto.o Conjunto.cpp</code>
+								</pre>
+								<pre>
+									<code>clean:</code><br>
+									<code>rm *.o main</code>
+								</pre>
+								<p>Para <strong>ejecutar</strong> este archivo, escribimos sobre la linea de comandos: <strong>make</strong>, esta opcion nos creara el archivo de salida, que sera el ejecutable.</p>
+								<p>Es aquı donde viene la verdadera prueba de fuego del programador: cuando lanza la orden de compilar y enlazar su programa.</p>
+								<p>Todos los modulos involucrados en los pasos anteriores, compilador, analizador sintactico y enlazador pueden detectar errores en nuestro codigo y mostrar los mensajes correspondientes.</p>
+								<p>Estos errores son considerados solo de tres tipos:</p>
+								<ul>
+									<li>De <strong>tiempo de compilacion</strong>. Se engloban aquı los errores detectados por preprocesador, el analizador sintactico y el propio compilador. Los hay meramente sintacticos.</li>
+									<li> De <strong>tiempo de enlazado.</strong> Son detectados por el enlazador. Por ejemplo una llamada a funcion cuya definicion no aparece por ninguna parte.</li>
+									<li>De <strong>tiempo de (runtime)</strong>. Existe finalmente una ultima clase de errores: los que se producen cuando se ejecuta el programa; son precisamente los mas difıciles de diagnosticar y verificar, sobre todo en aplicaciones grandes.</li>
+								</ul>
 
 						</article>
 				</section>
-			</main>-->
+			</main>
 	</body>
 </html>
