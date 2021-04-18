@@ -351,6 +351,35 @@
 								<p>La sentencia return se utiliza para salir de una funcion o procedimiento, volviendo al punto en el cual se llamo a dicha funcion o procedimiento. En el codigo hay que minimizar la utilizacion de return, solo tendrıa que aparecer una vez en cada funcion o procedimiento, al final del mismo, de manera que se tenga un solo punto de entrada a la funcion y un solo punto de salida de la misma.</p>
 						</article>
 				</section>
+				<section class="main-section" id="funciones_y_estructuras">
+					<h2>Funciones y Estructuras</h2>
+						<article>
+							<header><h3>Funciones</h3></header>
+								<p>Una <strong>funcion</strong> es una parte de un programa (subrutina) con un nombre, que puede ser invocada (llamada a ejecucion) desde otras partes tantas veces como se desee. Un bloque de codigo que puede ser ejecutado como una unidad funcional, opcionalmente puede recibir valores o bien se ejecuta y devuelve un valor. Desde el punto de vista de la organizacion, podemos decir que una funcion es algo que permite un cierto orden en una maraña de algoritmos. Como resumen de lo anterior podemos concluir que el uso de funciones se justifica en dos palabras: organizacion y reutilizacion del codigo.</p>
+								<em>Las funciones se declaran y se definen exactamente igual que en C, estas puede utilizar prototipo (prototype). Un prototipo es un modelo limitado de una entidad mas completa que aparecera despues. En el caso de funciones, la funcion es la entidad completa que vendra despues, y la declaracion de dicha funcion es el prototipo. El prototipo da un modelo de interface a la funcion.</em>
+								<p>La de claracion de una funcion tiene el siguiente cuerpo:</p>
+									<pre>
+										<code>tipo-de-retorno nombre-de-funcion(parametros)</code>
+										<code>{</code>
+										<code>declaraciones</code>
+										<code>proposiciones</code>
+										<code>}</code>
+									</pre>
+								<p>Si la funcion no retorna un valor el tipo de retorno es <strong>void</strong>. Si la funcion no tiene parametros se escribe <strong>myfunc(void)</strong>.</p>
+							<h3>Estructuras</h3>
+								<p>Una estructura es un grupo de variables relacionadas de manera logica, las cuales pueden ser de diferentes tipos y declaradas en una sola unidad, donde la unidad es la estructura.<br>Estas son una especie de hıbrido entre las estructuras de C y las clases de C++, de hecho podrıan ser sustituidas por clases definidas ya que disponen de tres tipos de modificadores deacceso: <em>publico, privado y protegido</em>, y el considerarlas como tales, permite un mayor control de acceso de las estructuras.</p>
+								<p>En C++ se forma una estructura utilizando la palabra reservada struct, seguida por un campo etiqueta opcional, y luego una lista de miembros dentro de la estructura. La etiqueta opcional se utiliza para crear otras variables del tipo particular de la estructura.</p>
+									<pre>
+										<code>struct campo_etiqueta{</code>
+										<code>tipo_miembro miembro_1;</code>
+										<code>tipo_miembro miembro_2;</code>
+										<code>:</code>
+										<code>tipo_miembro miembro_n;</code>
+										<code>};</code>
+									</pre>
+								<em>Un punto y coma finaliza la definicion de una estructura puesto que esta es realmente una sentencia C++ </em>
+						</article>
+				</section>
 			</main>
 	</body>
 </html>
