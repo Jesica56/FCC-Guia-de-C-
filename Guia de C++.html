@@ -19,7 +19,6 @@
 				<li><a class="nav-link" href="#funciones_y_estructuras">Funciones y Estructuras</a></li>
 				<li><a class="nav-link" href="#arreglos_y_apuntadores">Arreglos y apuntadores</a></li>
 				<li><a class="nav-link" href="#manejo_de_memoria_dinamica">Manejo de Memoria Dinamica</a></li>
-				<li><a class="nav-link" href="#estructura_de_datos">Estructura de Datos</a></li>
 				<li><a class="nav-link" href="#referencia">Referencia</a></li>
 			</ul>
 		</nav>
@@ -378,6 +377,60 @@
 										<code>};</code>
 									</pre>
 								<em>Un punto y coma finaliza la definicion de una estructura puesto que esta es realmente una sentencia C++ </em>
+						</article>
+				</section>
+				<section class="main-section" id="arreglos_y_apuntadores">
+					<h2>Arreglos y Apuntadores</h2>
+						<article>
+							<header><h3>Arreglos</h3></header>
+								<p>El lenguaje C++ permite construir estructuras mas complejas a partir sus tipos basicos. Una de las construcciones que podemos definir son los arreglos.</p>
+								<p><strong>Arreglo</strong>: Coleccion ordenada de elementos de un mismo tipo. Ordenada significa que cada elemento tiene una ubicacion determinada dentro del arreglo y debemos conocerla para poder acceder a él.</p>
+								<em>Se define de la siguiente</em>
+								<pre>
+									<code><tipo>nombre variable [longitud];</code>
+								</pre>
+								<p>Con esto diremos que nombre variable es un arreglo de longitud elementos del tipo <tipo>. Cabe destacar que longitud debe ser cualquier expresion entera constante mayor que cero</p>
+									<em>Un arreglo se asigna de la siguiente manera:</em>
+									<pre>
+										<codenombre> variable[´ındice] = expresi´on del tipo <tipo ></code>
+									</pre>
+								<p>Esta instruccion asigna el valor asociado de la expresion a la posicion ındice del arreglo nombre variable. El ındice debe ser una expresion del tipo entero en el rango [0, longitud-1]. Cabe destacar que C++ no chequea que el valor de la expresion sea menor a longitud, simplemente asigna el valor a esa posicion de memoria como si formara parte del arreglo.</p>
+							<h3>Apuntadores</h3>
+								<p>Los <strong>apuntadores</strong> tambien conocidos como punteros, son variables que guardan direcciones de memoria C++. Proporcionan mucha utilidad al programador para accesar y manipular datos de maneras que no es posible en otros lenguajes. Tambien son utiles para pasarle parametros a las funciones de tal modo que les permiten modificar y regresar valores a la rutina que las llama.</p>
+								<p>Los punteros son un recurso que en cierta forma podrıa considerarse de muy bajo nivel, ya que permiten manipular directamente contenidos de memoria. Por esta razon, su utilizacion puede presentar algunos problemas y exigen que se preste una especial atencion a aquellas secciones del codigo que los utilizan. Recuerde que los errores mas insidiosos y difıciles de depurar que se presentan en los programas C++, estan relacionados con el uso descuidado de punteros.
+								Ejemplo:</p>
+								<pre>
+									<code>int* pint;      //Declara un puntero a enter</code>
+									<code>char* pchar;    //Puntero a char</code>
+									<code>fecha* pfecha;   //Puntero a objeto de clase fecha</code>
+								</pre>
+						</article>
+				</section>
+				<section class="main-section" id="manejo_de_memoria_dinamica">
+					<h2>Manejo de Memoria Dinamica</h2>
+						<article>
+							<header><h3>Memoria Dinammica</h3></header>
+								<p>La memorıa dinamica es un espacio de almacenamiento que se solicita en tiempo de ejecucion. El espacio libre de almacenamiento en C++ se conoce como almacenamiento libre</p>
+								<p>Ademas de solicitar espacios de almacenamiento, tambien podemos liberarlos (en tiempo de ejecucion) cuando dejemos de necesitarlos.<br>
+								Para realizar esta administracion de la memoria dinamica, C++ cuenta con dos operadores para la gestion de memorıa: new y delete que forman parte del lenguaje y no de un librerıa, de modo no se necesitan incluir archivos de encabezados para utilizarlos.</p>
+									<ul>
+										<li>El operador new reserva memorıa dinamica, su proposito es crear arrays cuyo tamaño pueda ser determinado mientras el programa corre.<br>
+											La forma de utilizar este operador es la siguiente:<br>
+											<pre>
+												<code><nombre_puntero> = new <nombre></code>
+														<code>[<argumentos> ];</code>
+											</pre></li>
+										<li>El operador delete se usa para liberar bloques de memorıa dinamica reservada con new. El unico inconveniente que podrıa ocasionar el uso del operador delete serıa el utilizarlo en aquellos casos en el que el puntero a borrar realmente no ha sido reservado correctamente con la llamada a new y tiene un valor no nulo, pero el operador delete verifica que el puntero que se le pasa no sea nulo antes de destruir el objeto asociado.</li>
+									</ul>
+						</article>
+				</section>
+				<section class="main-section" id="referencia">
+					<h2>Referencia</h2>
+						<article>
+							<header><h3>Enlaces</h3></header>
+								<ul>
+									<li>Para ver mas has click<a href="https://www.uv.es/sto/cursos/c++/curso95.pdf">AQUI</a></li>
+								</ul>
 						</article>
 				</section>
 			</main>
