@@ -238,6 +238,119 @@
 									</ul>
 						</article>
 				</section>
+				<section class="main-section" id="espacios_de_nombres_en_c++">
+					<h2>Espacios de nombres</h2>
+						<article>
+							<header><h3>En C++</h3></header>
+								<p>Los <strong>espacios de nombre</strong> nos ayudan a evitar problemas con identificadores, nos permiten, que existan variables o funciones con el mismo nombre, declaradas en distintos espacios de nombre, ademas no pueden hacerse declaraciones de namespace dentro de bloques, como funciones. Un namespace se define de la siguiente manera:</p>
+								<pre>
+									<code>namespace <nombre_del_namespace></code>
+									<code>{</code>
+									<code>... //declaraciones y/o definiciones de variables, funciones, clases</code>
+									<code>}</code>
+								</pre>
+								<em>aqui nombre_del_namespace es un identificador estadar C++</em>
+								<p>El nombre del espacio funciona como un prefijo para las variables, funciones o clases declaradas en su interior, de modo que para acceder a una de esas variables se tiene que usar un especificador de ambito (::), o activar el espacio con nombre adecuado.</p>
+								<p>Presentamos el siguiente codigo que genera un espacio de nombre.</p>
+									<pre>
+										<code>#include <iostream></code>
+										<code>namespace uno {</code>
+											<code>int x;</code>
+											<code>namespace dos {</code>
+													<code>int x;</code>
+													<code>namespace tres {</code>
+																<code>int x;</code>
+														<code>}</code>
+													<code>}</code>
+											<code>}</code>
+										<code>using std::cout;</code>
+										<code>using std::endl;</code>
+										<code>using uno::x;</code>
+										<code>int main() {</code>
+											<code>x = 10; // Declara x como uno::x</code>
+											<code>uno::dos::x = 30;</code>
+											<code>uno::dos::tres::x = 50;</code>
+											<code>cout << x << ", " << uno::dos::x <<</code>
+												<code>", " << uno::dos::tres::x << endl;</code>
+											<code>return 0;</code>
+										<code>}</code>
+									</pre>
+						</article>
+				</section>
+				<section class="main-section" id="bloque_de_sentencias">
+					<h2>Bloque</h2>
+						<article>
+							<header><h3>Bloque de sentencias</h3></header>
+								<p>Las sentencias especifican y controlan el flujo de ejecucion del programa. Si no existen sentencias especıficas de seleccion o salto, el programa se ejecuta de forma secuencial en el mismo orden en que se ha escrito el codigo fuente.</p>
+								<p>En C++ el concepto de bloque de sentencias se utiliza para agrupar un conjunto de sentencias dentro de un ambito concreto dentro del programa. Un bloque de sentencias es un conjunto de instrucciones englobadas bajo llaves { }.</p>
+							<h3>Sentencia if</h3>
+								<p>La sentencia <strong>if</strong> elige entre varias alternativas en base al valor de una o mas expresiones booleanas</p>
+									<em>Sintaxis:</em>
+									<pre>
+										<code>if( <expresion booleana>)</code>
+										<code><bloque a ejecutar cuando la expresion es verdadera></code>
+											<code>else</code>
+										<code><bloque a ejecutar cuando la expresion es falsa></code>
+									</pre>
+								<p>La sentencia else es opcional, puede utilizarse o no. En el caso de no utilizarlo, cuando la expresion evaluada sea falsa la ejecucion continuara con la sentencia inmediatamente posterior al if.</p>
+							<h3>Comparaciones en C++</h3>
+								<p>En C++ las comparaciones se especifican mediante el operador ==, en primera posicion la constante y como segundo mienbro de la igualdad la variable. Dicha comparacion nos regresara un booleano.</p>
+									<pre>
+										<code>if ( constante == variable){ }</code>
+									</pre>
+							<h3>Asignaciones en C++</h3>
+								<p>En las asignaciones se debe evitar la conversion explıcita de tipos de datos. Se aconseja no hacer asignaciones multiples, ya que estas dan a lugar a actuaciones erroneas. En general las sentencias de asignacion tienen la forma:</p>
+									<pre>
+										<code>tipo variable;</code>
+										<code>variable = expresion;</code>
+									</pre>
+							<h3>Sentencia Switch</h3>
+								<p>En casos en los que el programa presenta varias elecciones despues de checar un expresion multiple o multialternativa, donde el valor de una expresion determina que sentencias seran ejecutadas es mejor utilizar una sentencia <strong>switch</strong>.</p>
+								<p>Esta estructura ocupa la palabra reservada <strong>break</strong> que permite que el flujo del programa se detenga justo despues de la ejecucion de la sentencia anterior a ese break, pidiendo que se ejecuten las sentencias correspondientes a las siguientes alternativas de switch.</p>
+								<p>Por otro lado <strong>default</strong> es opcional y engloba un conjunto de sentencias que se ejecutan en caso de que ninguna de las alternativas del switch tenga un valor que coincida con el resultado de evaluar la expresion del selector.</p>
+									<pre>
+										<code>switch(var int o char)</code>
+										<code>{</code>
+										<code>case const1: instrucciones;</code>
+										<code>break;</code>
+										<code>case const2: instrucciones;</code>
+										<code>break;</code>
+										<code>default: instrucciones;</code>
+										<code>}</code>
+									</pre>
+							<h3>Sentencia For</h3>
+								<p>La sentencia <strong>for</strong> se usara para definir un ciblo en el que una variable se incrementa de manera constante en cada iteracion y la finalizacion del ciblo se determina mediante una expresion constante. Como contador en <strong>for</strong> se utilizaran preferiblemente variables de un solo caracter como i, j, k, declarandolas dentro del mismo ciclo.</p>
+								<p>Su formato general es:</p>
+									<pre>
+										<code>for (inicializacion; condicion; incremento)</code>
+										<code>{ instruccion(es); };</code>
+									</pre>
+							<h3>Sentencias While y do While</h3>
+								<p>Al comenzar un ciclo <strong>while o do...while</strong> la expresion de control debe tener un valor claramente definido, para impedir posibles indeterminaciones o errores de funcionamiento.</p>
+								<p>La sentencia <strong>while</strong> se usara para definir un ciclo en el que la condicion de terminacion se evalua al principio del mismo.</p>
+								<p>Su formato general es:</p>
+									<pre>
+										<code>cargar o inicializar variable de condicion;</code>
+										<code>while(condicion)</code>
+										<code>{</code>
+										<code>grupo cierto de instrucciones;</code>
+										<code>instruccion(es) para salir del ciclo;</code>
+										<code>};</code>
+									</pre>
+								<p>La sentencia <strong>do...while</strong> se usara para definir un ciclo en el que la condicion de terminacion se evaluara al final del mismo.</p>
+								<p>Su formato general es:</p>
+									<pre>
+										<code>cargar o inicializar variable de condicion;</code>
+										<code>do {</code>
+										<code>grupo cierto de instruccion(es);</code>
+										<code>instruccion(es) de rompimiento de ciclo;</code>
+										<code>} while (condicion);</code>
+									</pre>
+							<h3>Sentencia exit y return</h3>
+								<p>La sentencia <strong>exit</strong> finaliza la ejecucion de un proceso de manera inmediata, forzando la vuelta al sistema operativo. No se aconseja su utilizacion en cualquier parte del codigo, siendo preferible controlar el flujo en el proceso mediante bucles condicionales y devolver el control mediante la sentencia return.</p>
+								<p>La sentencia return se utiliza para salir de una funcion o procedimiento, volviendo al punto en el cual se llamo a dicha funcion o procedimiento. En el codigo hay que minimizar la utilizacion de return, solo tendrıa que aparecer una vez en cada funcion o procedimiento, al final del mismo, de manera que se tenga un solo punto de entrada a la funcion y un solo punto de salida de la misma.</p>
+						</article>
+				</section>
 			</main>
 	</body>
 </html>
