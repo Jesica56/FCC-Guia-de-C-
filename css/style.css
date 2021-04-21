@@ -19,29 +19,36 @@ strong {
     border-right-width: 4px;
     font-size: 1.56em;
     border-right: solid;
-    border-color: rgba(0, 22, 22, 0.4);
+    border-color: rgba(0, 0, 49, 0.8);
 }
 
 #navbar header {
+	display: block;
 	font-size: 1.24em;
 	margin: 5px;
-	padding: 10px 3px;
+	padding: 10px 12px;
 
 }
 
 a.nav-link {
 	text-decoration: none;
-    padding: 10px 30px;
-    color: black;
+	color: rgba(0, 0, 0, 0.7);
     cursor: pointer; 
-    border-top: solid;
-    border-color: rgba(0, 22, 22, 0.4)
+    font-size: 0.8em;
 }
+
 #navbar ul {
-   /* height: 88%;*/
-    padding: 0;
+    height: 85%;
+    padding: 10px 0px 10px 1px;
     overflow-y: auto;
     overflow-x: hidden;
+}
+
+#navbar ul li {
+	display: list-item;
+	padding: 10px;
+	border-top: solid;
+	border-color: rgba(0, 0, 49, 0.8);
 }
 
 #main-doc {
