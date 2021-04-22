@@ -55,13 +55,18 @@
 								<p>Cuando creamos pequeños programas la compilacion de estos es muy facil, pero cuando se trabaja con proyectos grandes, con varios archivos fuente la compilacion resulta mas dificil, por lo que Linux proporciona la utilerıa make de GNU, el cual busca un archivo make donde encontrara toda la informacion que necesita para crear el ejecutable, si encuentra el archivo busca la palabra makefile o Makefile, que son nombres predeterminados.</p>
 								<p>Los archivos make contienen informacion acerca de la compilacion y enlace del programa, con una sintaxis muy especifica. Un makefile se define como una lista de normas y dependencias con sus correspondientes comandos para crear objetivos, utilizando dichas normas y dependencias.</p>
 								<p>Un archivo Makefile es un archivo de texto en el cual se distinguen cuatro tipos basicos de declaraciones:</p>
-									<ul>
+									<ul class="declaraciones">
 										<li>Comentario: Los comentarios se iniciaan con el caracter #, y se ignora todo lo que contiene despues de ella, hasta el final</li>
 										<li>Variables: Se define usando el siguiente formato:<br>
 											<code>nombre=dato</code></li>
 										<li>Reglas Explicitas: Estas le indican a make que archivos depende de otros, asi como los comandos requeridos para coompilar un archivo en particular. Ejemplo:<br>
-											<code>main: main.c funciones.h</code><br>
-											<code>gcc -o main main.c funciones.h</code></li>
+										<pre>
+										<code>
+										main: main.c funciones.h
+										gcc -o main main.c funciones.h
+										</code>
+										</pre>
+										</li>
 										<li>Reglas Implicitas: Son similares a las reglas explıcitas, pero no indican los comandos a ejecutar, sino que make utiliza los sufijos (extensiones de los archivos) para determinar que comandos ejecutar. Por ejemplo:<br>
 											<code>funciones.o: funciones.c funciones.h</code><br> origina la siguiente linea:<br>
 											<code>$(CC) $(CFLAGS) c funciones.c funciones.h</code><br>
@@ -69,18 +74,20 @@
 									</ul>
 								<p>Ejemplo de Makefile</p>
 								<pre>
-									<code>CPPFLAGS=</code><br>
-									<code>CCPPLIBS=</code><br>
-									<code>main: Conjunto.o main.o</code><br>
-									<code>g++ -o main main.o Conjunto.o $(CPPLIGS)</code>
+									<code>
+										CPPFLAGS=
+										CCPPLIBS=
+										main: Conjunto.o main.o
+										g++ -o main main.o Conjunto.o $(CPPLIGS)
+									</code>
 								</pre>
 								<pre>
-									<code>Conjunto.o: Conjunto.cpp Conjunto.h</code><br>
-									<code>g++ $(CPPFLAGS) -c -o Conjunto.o Conjunto.cpp</code>
+									<code>Conjunto.o: Conjunto.cpp Conjunto.h
+									g++ $(CPPFLAGS) -c -o Conjunto.o Conjunto.cpp</code>
 								</pre>
 								<pre>
-									<code>clean:</code><br>
-									<code>rm *.o main</code>
+									<code>clean:
+									rm *.o main</code>
 								</pre>
 								<p>Para <strong>ejecutar</strong> este archivo, escribimos sobre la linea de comandos: <strong>make</strong>, esta opcion nos creara el archivo de salida, que sera el ejecutable.</p>
 								<p>Es aquı donde viene la verdadera prueba de fuego del programador: cuando lanza la orden de compilar y enlazar su programa.</p>
@@ -100,13 +107,15 @@
 							<header><h3>Estructura de un programa en C++</h3></header>
 							<p>Para darnos una idea chequemos el siguiente programa</p>
 							<pre>
-								<code>//Mi primer programa en C++</code><br>
-								<code># include <iostream></code><br>
-								<code>using namespace std;</code><br>
-								<code>int main (){</code><br>
-								<code>count <<"hello World";</code><br>
-								<code>return 0;</code><br>
-								<code>}</code>
+								<code>
+								//Mi primer programa en C++
+								# include <iostream>
+								using namespace std;
+								int main (){
+								count <<"hello World";
+								return 0;
+								}
+								</code>
 							</pre>
 							<p>El programa anterior es tipico de los programadores aprendices, el resultado de un impresion en pantalla es la frase:</p>
 							<pre>
@@ -244,36 +253,39 @@
 							<header><h3>En C++</h3></header>
 								<p>Los <strong>espacios de nombre</strong> nos ayudan a evitar problemas con identificadores, nos permiten, que existan variables o funciones con el mismo nombre, declaradas en distintos espacios de nombre, ademas no pueden hacerse declaraciones de namespace dentro de bloques, como funciones. Un namespace se define de la siguiente manera:</p>
 								<pre>
-									<code>namespace <nombre_del_namespace></code>
-									<code>{</code>
-									<code>... //declaraciones y/o definiciones de variables, funciones, clases</code>
-									<code>}</code>
+									<code>
+									namespace <nombre_del_namespace>
+									{
+									... //declaraciones y/o definiciones de variables, funciones, clases
+									}
+									</code>
 								</pre>
 								<em>aqui nombre_del_namespace es un identificador estadar C++</em>
 								<p>El nombre del espacio funciona como un prefijo para las variables, funciones o clases declaradas en su interior, de modo que para acceder a una de esas variables se tiene que usar un especificador de ambito (::), o activar el espacio con nombre adecuado.</p>
 								<p>Presentamos el siguiente codigo que genera un espacio de nombre.</p>
 									<pre>
-										<code>#include <iostream></code>
-										<code>namespace uno {</code>
-											<code>int x;</code>
-											<code>namespace dos {</code>
-													<code>int x;</code>
-													<code>namespace tres {</code>
-																<code>int x;</code>
-														<code>}</code>
-													<code>}</code>
-											<code>}</code>
-										<code>using std::cout;</code>
-										<code>using std::endl;</code>
-										<code>using uno::x;</code>
-										<code>int main() {</code>
-											<code>x = 10; // Declara x como uno::x</code>
-											<code>uno::dos::x = 30;</code>
-											<code>uno::dos::tres::x = 50;</code>
-											<code>cout << x << ", " << uno::dos::x <<</code>
-												<code>", " << uno::dos::tres::x << endl;</code>
-											<code>return 0;</code>
-										<code>}</code>
+										<code>#include <iostream>
+										namespace uno {
+											int x;
+											namespace dos {
+													int x;
+													namespace tres {
+																int x;
+														}
+													}
+											}
+										using std::cout;
+										using std::endl;
+										using uno::x;
+										int main() {
+											x = 10; // Declara x como uno::x
+											uno::dos::x = 30;
+											uno::dos::tres::x = 50;
+											cout << x << ", " << uno::dos::x <<
+												", " << uno::dos::tres::x << endl;
+										return 0;
+											}
+										</code>
 									</pre>
 						</article>
 				</section>
@@ -287,10 +299,12 @@
 								<p>La sentencia <strong>if</strong> elige entre varias alternativas en base al valor de una o mas expresiones booleanas</p>
 									<em>Sintaxis:</em>
 									<pre>
-										<code>if( <expresion booleana>)</code>
-										<code><bloque a ejecutar cuando la expresion es verdadera></code>
-											<code>else</code>
-										<code><bloque a ejecutar cuando la expresion es falsa></code>
+										<code>
+											if( <expresion booleana>)
+										<bloque a ejecutar cuando la expresion es verdadera>
+											else<
+										<bloque a ejecutar cuando la expresion es falsa>
+										</code>
 									</pre>
 								<p>La sentencia else es opcional, puede utilizarse o no. En el caso de no utilizarlo, cuando la expresion evaluada sea falsa la ejecucion continuara con la sentencia inmediatamente posterior al if.</p>
 							<h3>Comparaciones en C++</h3>
@@ -301,50 +315,56 @@
 							<h3>Asignaciones en C++</h3>
 								<p>En las asignaciones se debe evitar la conversion explıcita de tipos de datos. Se aconseja no hacer asignaciones multiples, ya que estas dan a lugar a actuaciones erroneas. En general las sentencias de asignacion tienen la forma:</p>
 									<pre>
-										<code>tipo variable;</code>
-										<code>variable = expresion;</code>
+										<code>
+											tipo variable;
+											variable = expresion;
+									</code>
 									</pre>
 							<h3>Sentencia Switch</h3>
 								<p>En casos en los que el programa presenta varias elecciones despues de checar un expresion multiple o multialternativa, donde el valor de una expresion determina que sentencias seran ejecutadas es mejor utilizar una sentencia <strong>switch</strong>.</p>
 								<p>Esta estructura ocupa la palabra reservada <strong>break</strong> que permite que el flujo del programa se detenga justo despues de la ejecucion de la sentencia anterior a ese break, pidiendo que se ejecuten las sentencias correspondientes a las siguientes alternativas de switch.</p>
 								<p>Por otro lado <strong>default</strong> es opcional y engloba un conjunto de sentencias que se ejecutan en caso de que ninguna de las alternativas del switch tenga un valor que coincida con el resultado de evaluar la expresion del selector.</p>
 									<pre>
-										<code>switch(var int o char)</code>
-										<code>{</code>
-										<code>case const1: instrucciones;</code>
-										<code>break;</code>
-										<code>case const2: instrucciones;</code>
-										<code>break;</code>
-										<code>default: instrucciones;</code>
-										<code>}</code>
+										<code>switch(var int o char)
+										{
+										case const1: instrucciones;
+										break;
+										case const2: instrucciones;
+										break;
+										default: instrucciones;
+										}
+										</code>
 									</pre>
 							<h3>Sentencia For</h3>
 								<p>La sentencia <strong>for</strong> se usara para definir un ciblo en el que una variable se incrementa de manera constante en cada iteracion y la finalizacion del ciblo se determina mediante una expresion constante. Como contador en <strong>for</strong> se utilizaran preferiblemente variables de un solo caracter como i, j, k, declarandolas dentro del mismo ciclo.</p>
 								<p>Su formato general es:</p>
 									<pre>
-										<code>for (inicializacion; condicion; incremento)</code>
-										<code>{ instruccion(es); };</code>
+										<code>for (inicializacion; condicion; incremento)
+											{ instruccion(es); };
+										</code>
 									</pre>
 							<h3>Sentencias While y do While</h3>
 								<p>Al comenzar un ciclo <strong>while o do...while</strong> la expresion de control debe tener un valor claramente definido, para impedir posibles indeterminaciones o errores de funcionamiento.</p>
 								<p>La sentencia <strong>while</strong> se usara para definir un ciclo en el que la condicion de terminacion se evalua al principio del mismo.</p>
 								<p>Su formato general es:</p>
 									<pre>
-										<code>cargar o inicializar variable de condicion;</code>
-										<code>while(condicion)</code>
-										<code>{</code>
-										<code>grupo cierto de instrucciones;</code>
-										<code>instruccion(es) para salir del ciclo;</code>
-										<code>};</code>
+										<code>cargar o inicializar variable de condicion;
+											while(condicion)
+											{
+										grupo cierto de instrucciones;
+											instruccion(es) para salir del ciclo;
+											};
+										</code>
 									</pre>
 								<p>La sentencia <strong>do...while</strong> se usara para definir un ciclo en el que la condicion de terminacion se evaluara al final del mismo.</p>
 								<p>Su formato general es:</p>
 									<pre>
-										<code>cargar o inicializar variable de condicion;</code>
-										<code>do {</code>
-										<code>grupo cierto de instruccion(es);</code>
-										<code>instruccion(es) de rompimiento de ciclo;</code>
-										<code>} while (condicion);</code>
+										<code>cargar o inicializar variable de condicion;
+											do {
+											grupo cierto de instruccion(es);
+											instruccion(es) de rompimiento de ciclo;									
+												} while (condicion);
+											</code>
 									</pre>
 							<h3>Sentencia exit y return</h3>
 								<p>La sentencia <strong>exit</strong> finaliza la ejecucion de un proceso de manera inmediata, forzando la vuelta al sistema operativo. No se aconseja su utilizacion en cualquier parte del codigo, siendo preferible controlar el flujo en el proceso mediante bucles condicionales y devolver el control mediante la sentencia return.</p>
@@ -359,23 +379,25 @@
 								<em>Las funciones se declaran y se definen exactamente igual que en C, estas puede utilizar prototipo (prototype). Un prototipo es un modelo limitado de una entidad mas completa que aparecera despues. En el caso de funciones, la funcion es la entidad completa que vendra despues, y la declaracion de dicha funcion es el prototipo. El prototipo da un modelo de interface a la funcion.</em>
 								<p>La de claracion de una funcion tiene el siguiente cuerpo:</p>
 									<pre>
-										<code>tipo-de-retorno nombre-de-funcion(parametros)</code>
-										<code>{</code>
-										<code>declaraciones</code>
-										<code>proposiciones</code>
-										<code>}</code>
+										<code>tipo-de-retorno nombre-de-funcion(parametros)
+											{
+											declaraciones
+											proposiciones
+											}
+										</code>
 									</pre>
 								<p>Si la funcion no retorna un valor el tipo de retorno es <strong>void</strong>. Si la funcion no tiene parametros se escribe <strong>myfunc(void)</strong>.</p>
 							<h3>Estructuras</h3>
 								<p>Una estructura es un grupo de variables relacionadas de manera logica, las cuales pueden ser de diferentes tipos y declaradas en una sola unidad, donde la unidad es la estructura.<br>Estas son una especie de hıbrido entre las estructuras de C y las clases de C++, de hecho podrıan ser sustituidas por clases definidas ya que disponen de tres tipos de modificadores deacceso: <em>publico, privado y protegido</em>, y el considerarlas como tales, permite un mayor control de acceso de las estructuras.</p>
 								<p>En C++ se forma una estructura utilizando la palabra reservada struct, seguida por un campo etiqueta opcional, y luego una lista de miembros dentro de la estructura. La etiqueta opcional se utiliza para crear otras variables del tipo particular de la estructura.</p>
 									<pre>
-										<code>struct campo_etiqueta{</code>
-										<code>tipo_miembro miembro_1;</code>
-										<code>tipo_miembro miembro_2;</code>
-										<code>:</code>
-										<code>tipo_miembro miembro_n;</code>
-										<code>};</code>
+										<code>struct campo_etiqueta{
+											tipo_miembro miembro_1;
+											tipo_miembro miembro_2;
+											:
+											tipo_miembro miembro_n;
+											};
+										</code>
 									</pre>
 								<em>Un punto y coma finaliza la definicion de una estructura puesto que esta es realmente una sentencia C++ </em>
 						</article>
@@ -393,7 +415,7 @@
 								<p>Con esto diremos que nombre variable es un arreglo de longitud elementos del tipo <tipo>. Cabe destacar que longitud debe ser cualquier expresion entera constante mayor que cero</p>
 									<em>Un arreglo se asigna de la siguiente manera:</em>
 									<pre>
-										<codenombre> variable[´ındice] = expresi´on del tipo <tipo ></code>
+										<code><nombre> variable[ındice] = expresion del tipo <tipo ></code>
 									</pre>
 								<p>Esta instruccion asigna el valor asociado de la expresion a la posicion ındice del arreglo nombre variable. El ındice debe ser una expresion del tipo entero en el rango [0, longitud-1]. Cabe destacar que C++ no chequea que el valor de la expresion sea menor a longitud, simplemente asigna el valor a esa posicion de memoria como si formara parte del arreglo.</p>
 							<h3>Apuntadores</h3>
@@ -401,9 +423,11 @@
 								<p>Los punteros son un recurso que en cierta forma podrıa considerarse de muy bajo nivel, ya que permiten manipular directamente contenidos de memoria. Por esta razon, su utilizacion puede presentar algunos problemas y exigen que se preste una especial atencion a aquellas secciones del codigo que los utilizan. Recuerde que los errores mas insidiosos y difıciles de depurar que se presentan en los programas C++, estan relacionados con el uso descuidado de punteros.
 								Ejemplo:</p>
 								<pre>
-									<code>int* pint;      //Declara un puntero a enter</code>
-									<code>char* pchar;    //Puntero a char</code>
-									<code>fecha* pfecha;   //Puntero a objeto de clase fecha</code>
+									<code>
+										int* pint;      //Declara un puntero a enter
+										char* pchar;    //Puntero a char
+										fecha* pfecha;   //Puntero a objeto de clase fecha
+									</code>
 								</pre>
 						</article>
 				</section>
@@ -418,8 +442,10 @@
 										<li>El operador new reserva memorıa dinamica, su proposito es crear arrays cuyo tamaño pueda ser determinado mientras el programa corre.<br>
 											La forma de utilizar este operador es la siguiente:<br>
 											<pre>
-												<code><nombre_puntero> = new <nombre></code>
-														<code>[<argumentos> ];</code>
+												<code> 
+													<nombre_puntero> = new <nombre>
+														[<argumentos> ];
+												</code>
 											</pre></li>
 										<li>El operador delete se usa para liberar bloques de memorıa dinamica reservada con new. El unico inconveniente que podrıa ocasionar el uso del operador delete serıa el utilizarlo en aquellos casos en el que el puntero a borrar realmente no ha sido reservado correctamente con la llamada a new y tiene un valor no nulo, pero el operador delete verifica que el puntero que se le pasa no sea nulo antes de destruir el objeto asociado.</li>
 									</ul>

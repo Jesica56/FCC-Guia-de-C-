@@ -76,4 +76,24 @@ h3 {
 	font-family: ui-monospace;
 	font-size: x-large;
 	font-weight: bold;
-}w
+}
+
+ul {
+	padding: 10px 50px;
+}
+
+/*ul.item li {
+
+}*/
+code {
+	display: block;
+	text-align: left;
+	background-color: rgba(0, 0, 0, 0.1);
+	border:dashed 0px #000000;
+	border-top-left-radius: 9px;
+	border-top-right-radius: 9px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	padding: 10px 5px;
+
+}
