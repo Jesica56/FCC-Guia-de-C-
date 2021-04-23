@@ -24,6 +24,7 @@
 			</ul>
 		</nav>
 			<main id="main-doc">
+				<div class="container">
 				<section class="main-section" id="introducción">
 					<h2>Introducción al lenguaje de programción C++</h2>
 						<article>
@@ -109,10 +110,10 @@
 							<pre>
 								<code>
 								//Mi primer programa en C++
-								# include <iostream>
+								# include (iostream)
 								using namespace std;
 								int main (){
-								count <<"hello World";
+								count "hello World";
 								return 0;
 								}
 								</code>
@@ -128,9 +129,9 @@
 							<p>Se trata de una lınea de comentario. Todas las lıneas que comiencen con dos signos barra se consideran comentarios y no tienen ningun efecto sobre el comportamiento del programa.<br>
 							El programador puede usar para incluir breves explicaciones o alegaciones dentro del codigo fuente en sı. En este caso, la lınea es una breve descripcion de lo que es nuestro programa.</p>
 							<pre>
-								<code># include <iostream></code>
+								<code># include (iostream)</code>
 							</pre>
-							<p>Las lıneas que comienza con un sımbolo de sostenido # son directivas para el preprocesador. En este caso, la directiva # include <iostream>le dice al preprocesador que incluya el iostream estandar de archivo. Este archivo especıfico (iostream) incluye las declaraciones de la norma basica de entrada y salida de la biblioteca de C++.</p>
+							<p>Las lıneas que comienza con un sımbolo de sostenido # son directivas para el preprocesador. En este caso, la directiva # include (iostream) le dice al preprocesador que incluya el iostream estandar de archivo. Este archivo especıfico (iostream) incluye las declaraciones de la norma basica de entrada y salida de la biblioteca de C++.</p>
 							<pre>
 								<code>using namespace std;</code>
 							</pre>
@@ -140,7 +141,7 @@
 							</pre>
 							<p>Esta lınea se corresponde con el comienzo de la definicion de la funcion principal. La funcion principal es el punto por donde todos los programas inician su ejecucion, independientemente de su ubicacion dentro del codigo fuente. No importa si hay otras funciones con otros nombres definidos antes o despues de las instrucciones que figuran dentro de esta funcion, ya que por definicion sera siempre la primera en ser ejecutada. Por esa misma razon, es esencial que todos los programas tengan una funcion principal. Lo que se contiene dentro de las llaves que delimitan la funcion es lo que hace cuando se ejecuta.</p>
 							<pre>
-								<code>count <<"hello World";</code>
+								<code>count "hello World";</code>
 							</pre>
 							<p>Esta lınea es una declaracion de C++, en terminos simples es una expresion que produce algun efecto. De hecho, esta declaracion lleva a cabo la unica accion que genera un efecto visible en nuestro programa. Representa el flujo de salida y su objetivo es insertar una secuencia de caracteres ( ”hello World”) en el flujo de salida estandar (pantalla)</p>
 							<pre>
@@ -254,7 +255,7 @@
 								<p>Los <strong>espacios de nombre</strong> nos ayudan a evitar problemas con identificadores, nos permiten, que existan variables o funciones con el mismo nombre, declaradas en distintos espacios de nombre, ademas no pueden hacerse declaraciones de namespace dentro de bloques, como funciones. Un namespace se define de la siguiente manera:</p>
 								<pre>
 									<code>
-									namespace <nombre_del_namespace>
+									namespace (nombre_del_namespace)
 									{
 									... //declaraciones y/o definiciones de variables, funciones, clases
 									}
@@ -264,7 +265,8 @@
 								<p>El nombre del espacio funciona como un prefijo para las variables, funciones o clases declaradas en su interior, de modo que para acceder a una de esas variables se tiene que usar un especificador de ambito (::), o activar el espacio con nombre adecuado.</p>
 								<p>Presentamos el siguiente codigo que genera un espacio de nombre.</p>
 									<pre>
-										<code>#include <iostream>
+										<code>
+										#include (iostream)
 										namespace uno {
 											int x;
 											namespace dos {
@@ -281,8 +283,8 @@
 											x = 10; // Declara x como uno::x
 											uno::dos::x = 30;
 											uno::dos::tres::x = 50;
-											cout << x << ", " << uno::dos::x <<
-												", " << uno::dos::tres::x << endl;
+											cout  x  ", "  uno::dos::x 
+												", "  uno::dos::tres::x  endl;
 										return 0;
 											}
 										</code>
@@ -300,10 +302,10 @@
 									<em>Sintaxis:</em>
 									<pre>
 										<code>
-											if( <expresion booleana>)
-										<bloque a ejecutar cuando la expresion es verdadera>
-											else<
-										<bloque a ejecutar cuando la expresion es falsa>
+											if(expresion booleano)
+										(bloque a ejecutar cuando la expresion es verdadera)
+											else
+										(bloque a ejecutar cuando la expresion es falsa)
 										</code>
 									</pre>
 								<p>La sentencia else es opcional, puede utilizarse o no. En el caso de no utilizarlo, cuando la expresion evaluada sea falsa la ejecucion continuara con la sentencia inmediatamente posterior al if.</p>
@@ -325,7 +327,8 @@
 								<p>Esta estructura ocupa la palabra reservada <strong>break</strong> que permite que el flujo del programa se detenga justo despues de la ejecucion de la sentencia anterior a ese break, pidiendo que se ejecuten las sentencias correspondientes a las siguientes alternativas de switch.</p>
 								<p>Por otro lado <strong>default</strong> es opcional y engloba un conjunto de sentencias que se ejecutan en caso de que ninguna de las alternativas del switch tenga un valor que coincida con el resultado de evaluar la expresion del selector.</p>
 									<pre>
-										<code>switch(var int o char)
+										<code>
+										switch(var int o char)
 										{
 										case const1: instrucciones;
 										break;
@@ -379,7 +382,8 @@
 								<em>Las funciones se declaran y se definen exactamente igual que en C, estas puede utilizar prototipo (prototype). Un prototipo es un modelo limitado de una entidad mas completa que aparecera despues. En el caso de funciones, la funcion es la entidad completa que vendra despues, y la declaracion de dicha funcion es el prototipo. El prototipo da un modelo de interface a la funcion.</em>
 								<p>La de claracion de una funcion tiene el siguiente cuerpo:</p>
 									<pre>
-										<code>tipo-de-retorno nombre-de-funcion(parametros)
+										<code>
+											tipo-de-retorno nombre-de-funcion(parametros)
 											{
 											declaraciones
 											proposiciones
@@ -391,7 +395,8 @@
 								<p>Una estructura es un grupo de variables relacionadas de manera logica, las cuales pueden ser de diferentes tipos y declaradas en una sola unidad, donde la unidad es la estructura.<br>Estas son una especie de hıbrido entre las estructuras de C y las clases de C++, de hecho podrıan ser sustituidas por clases definidas ya que disponen de tres tipos de modificadores deacceso: <em>publico, privado y protegido</em>, y el considerarlas como tales, permite un mayor control de acceso de las estructuras.</p>
 								<p>En C++ se forma una estructura utilizando la palabra reservada struct, seguida por un campo etiqueta opcional, y luego una lista de miembros dentro de la estructura. La etiqueta opcional se utiliza para crear otras variables del tipo particular de la estructura.</p>
 									<pre>
-										<code>struct campo_etiqueta{
+										<code>
+											struct campo_etiqueta{
 											tipo_miembro miembro_1;
 											tipo_miembro miembro_2;
 											:
@@ -410,12 +415,12 @@
 								<p><strong>Arreglo</strong>: Coleccion ordenada de elementos de un mismo tipo. Ordenada significa que cada elemento tiene una ubicacion determinada dentro del arreglo y debemos conocerla para poder acceder a él.</p>
 								<em>Se define de la siguiente</em>
 								<pre>
-									<code><tipo>nombre variable [longitud];</code>
+									<code>(tipo)nombre variable (longitud);</code>
 								</pre>
-								<p>Con esto diremos que nombre variable es un arreglo de longitud elementos del tipo <tipo>. Cabe destacar que longitud debe ser cualquier expresion entera constante mayor que cero</p>
+								<p>Con esto diremos que nombre variable es un arreglo de longitud elementos del tipo (tipo). Cabe destacar que longitud debe ser cualquier expresion entera constante mayor que cero</p>
 									<em>Un arreglo se asigna de la siguiente manera:</em>
 									<pre>
-										<code><nombre> variable[ındice] = expresion del tipo <tipo ></code>
+										<code>(nombre) variable[ındice] = expresion del tipo (tipo)</code>
 									</pre>
 								<p>Esta instruccion asigna el valor asociado de la expresion a la posicion ındice del arreglo nombre variable. El ındice debe ser una expresion del tipo entero en el rango [0, longitud-1]. Cabe destacar que C++ no chequea que el valor de la expresion sea menor a longitud, simplemente asigna el valor a esa posicion de memoria como si formara parte del arreglo.</p>
 							<h3>Apuntadores</h3>
@@ -434,7 +439,7 @@
 				<section class="main-section" id="manejo_de_memoria_dinamica">
 					<h2>Manejo de Memoria Dinamica</h2>
 						<article>
-							<header><h3>Memoria Dinammica</h3></header>
+							<header><h3>Memoria Dinamica</h3></header>
 								<p>La memorıa dinamica es un espacio de almacenamiento que se solicita en tiempo de ejecucion. El espacio libre de almacenamiento en C++ se conoce como almacenamiento libre</p>
 								<p>Ademas de solicitar espacios de almacenamiento, tambien podemos liberarlos (en tiempo de ejecucion) cuando dejemos de necesitarlos.<br>
 								Para realizar esta administracion de la memoria dinamica, C++ cuenta con dos operadores para la gestion de memorıa: new y delete que forman parte del lenguaje y no de un librerıa, de modo no se necesitan incluir archivos de encabezados para utilizarlos.</p>
@@ -443,8 +448,8 @@
 											La forma de utilizar este operador es la siguiente:<br>
 											<pre>
 												<code> 
-													<nombre_puntero> = new <nombre>
-														[<argumentos> ];
+													(nombre_puntero) = new (nombre)
+														[(argumentos)];
 												</code>
 											</pre></li>
 										<li>El operador delete se usa para liberar bloques de memorıa dinamica reservada con new. El unico inconveniente que podrıa ocasionar el uso del operador delete serıa el utilizarlo en aquellos casos en el que el puntero a borrar realmente no ha sido reservado correctamente con la llamada a new y tiene un valor no nulo, pero el operador delete verifica que el puntero que se le pasa no sea nulo antes de destruir el objeto asociado.</li>
@@ -460,6 +465,7 @@
 								</ul>
 						</article>
 				</section>
+				</div>
 			</main>
 	</body>
 </html>
