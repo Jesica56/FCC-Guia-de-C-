@@ -15,7 +15,7 @@ header {
     margin: 10px;
     text-align: center;
     font-size: 1.8em;
-    font-weight: thin;
+    font-weight: 600;
 }
 
 .container {
@@ -95,7 +95,7 @@ a.nav-link {
     padding: 20px;
     margin-bottom: 110px;
     overflow-y: hidden;
-    overflow-x: clip;
+    overflow-x: hidden;
 }
 
 h2 {
@@ -119,8 +119,9 @@ ul {
 pre {
     display: block;
     font-family: monospace;
-    white-space: pre;
+    white-space: pre-line;
 }
+
 
 code {
     display: block;
