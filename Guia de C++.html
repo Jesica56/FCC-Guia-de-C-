@@ -15,8 +15,8 @@
 				<li><a class="nav-link" href="#c++_en_entorno_linux">C++ en entorno Linux</a></li>
 				<li><a class="nav-link" href="#estructura">Estructura</a></li>
 				<li><a class="nav-link" href="#variables_y_tipos_datos">Variables y Tipos datos</a></li>
-				<li><a class="nav-link" href="#espacios_de_nombres_en_C++">Esapcios de nombres en C++</a></li>
-				<li><a class="nav-link" href="#bloque_de_sentencias">Bloques de sentencias</a></li>
+				<li><a class="nav-link" href="#espacios_de_nombres_en_c++">Espacios de nombres en C++</a></li>
+				<li><a class="nav-link" href="#bloque_de_sentencias">Bloque de sentencias</a></li>
 				<li><a class="nav-link" href="#funciones_y_estructuras">Funciones y Estructuras</a></li>
 				<li><a class="nav-link" href="#arreglos_y_apuntadores">Arreglos y apuntadores</a></li>
 				<li><a class="nav-link" href="#manejo_de_memoria_dinamica">Manejo de Memoria Dinamica</a></li>
@@ -25,9 +25,9 @@
 		</nav>
 			<main id="main-doc">
 				<section class="main-section" id="introducción">
-					<h2>Introducción al lenguaje de programción C++</h2>
+					<header>Introducción</header>
 						<article>
-							<header><h3>Lenguaje C++</h3></header>
+							<h3>Lenguaje C++</h3>
 								<p>C++ es un lenguaje de programación, creado a mediados de 1980 por Bjarne Strousstrup, como extensión del lenguaje C. Este lenguaje abarca tres paradigmas de la programación:</p>
 									<ul>
 										<li>Programación Estructura</li>
@@ -38,9 +38,8 @@
 						</article>
 				</section>
 				<section class="main-section" id="c++_en_entorno_linux">
-					<h2>C++ en un entorno</h2>
+					<header>C++ en entorno Linux</header>
 						<article>
-							<header><h3>En Linux</h3></header>
 								<p>Los programas se pueden escribir en cualquier editor de textos de GNU, entre ellos se encuentran <em>emacs, vim, kate, gedit, nan,</em> guardando dichos archivos con extensiÓn <em>.cpp</em>, los cuales seran compilados en GNU/linux utilizando el compilador GNU de C++, llamado <em>gcc</em> que puede compilar C, C++, y que ademas se apega al estandar ANSI, permitiendo la portabilidad de estos codigos. Dicho compilador se invoca con el comando <em>gcc</em>.</p>
 								<p>Para copilar ponemos la sguiente liena en una terminal previamente ubicada en el directorio que contiene nuestro archivo:</p>
 								<pre>
@@ -102,9 +101,9 @@
 						</article>
 				</section>
 				<section class="main-section" id="estructura">
-					<h2>Estructura</h2>
+					<header>Estructura</header>
 						<article>
-							<header><h3>Estructura de un programa en C++</h3></header>
+							<h3>Estructura de un programa en C++</h3>
 							<p>Para darnos una idea chequemos el siguiente programa</p>
 							<pre>
 								<code>
@@ -151,9 +150,9 @@
 						</article>
 				</section>
 				<section class="main-section" id="variables_y_tipos_datos">
-					<h2>Variables y Tipos de Variables</h2>
+					<header>Variables y Tipos datos</header>
 						<article>
-							<header><h3>Variables</h3></header>
+							<h3>Variables</h3>
 								<p>Una <strong>variable</strong> es un espacio de memorıa reservado en el ordenador para contener valores que pueden cambiar durante la ejecucion de un programa. Los tipos que se le asignen a estas determinan como se manipulara la informacion contenida en ellas.</p>
 								<p>Cada variable necesita un identificador que la distingue de las demas. Un <strong>identificador</strong> valido es una secuencia de una o mas letras, dıgitos o guiones bajos, recordando que no deben coincidir con palabras reservadas del lenguaje, deben comenzar por una letra y ademas tomar en cuenta que C++ hace diferencia entre mayusculas y minusculas.</p>
 								<p>Las variables que se pueden presentar en un programa son de los siguientes tipos:</p>
@@ -248,9 +247,8 @@
 						</article>
 				</section>
 				<section class="main-section" id="espacios_de_nombres_en_c++">
-					<h2>Espacios de nombres</h2>
+					<header>Espacios de nombres en C++</header>
 						<article>
-							<header><h3>En C++</h3></header>
 								<p>Los <strong>espacios de nombre</strong> nos ayudan a evitar problemas con identificadores, nos permiten, que existan variables o funciones con el mismo nombre, declaradas en distintos espacios de nombre, ademas no pueden hacerse declaraciones de namespace dentro de bloques, como funciones. Un namespace se define de la siguiente manera:</p>
 								<pre>
 									<code>
@@ -291,9 +289,8 @@
 						</article>
 				</section>
 				<section class="main-section" id="bloque_de_sentencias">
-					<h2>Bloque</h2>
+					<header>Bloque de sentencias</header>
 						<article>
-							<header><h3>Bloque de sentencias</h3></header>
 								<p>Las sentencias especifican y controlan el flujo de ejecucion del programa. Si no existen sentencias especıficas de seleccion o salto, el programa se ejecuta de forma secuencial en el mismo orden en que se ha escrito el codigo fuente.</p>
 								<p>En C++ el concepto de bloque de sentencias se utiliza para agrupar un conjunto de sentencias dentro de un ambito concreto dentro del programa. Un bloque de sentencias es un conjunto de instrucciones englobadas bajo llaves { }.</p>
 							<h3>Sentencia if</h3>
@@ -374,9 +371,9 @@
 						</article>
 				</section>
 				<section class="main-section" id="funciones_y_estructuras">
-					<h2>Funciones y Estructuras</h2>
+					<header>Funciones y Estructuras</header>
 						<article>
-							<header><h3>Funciones</h3></header>
+							<h3>Funciones</h3>
 								<p>Una <strong>funcion</strong> es una parte de un programa (subrutina) con un nombre, que puede ser invocada (llamada a ejecucion) desde otras partes tantas veces como se desee. Un bloque de codigo que puede ser ejecutado como una unidad funcional, opcionalmente puede recibir valores o bien se ejecuta y devuelve un valor. Desde el punto de vista de la organizacion, podemos decir que una funcion es algo que permite un cierto orden en una maraña de algoritmos. Como resumen de lo anterior podemos concluir que el uso de funciones se justifica en dos palabras: organizacion y reutilizacion del codigo.</p>
 								<em>Las funciones se declaran y se definen exactamente igual que en C, estas puede utilizar prototipo (prototype). Un prototipo es un modelo limitado de una entidad mas completa que aparecera despues. En el caso de funciones, la funcion es la entidad completa que vendra despues, y la declaracion de dicha funcion es el prototipo. El prototipo da un modelo de interface a la funcion.</em>
 								<p>La de claracion de una funcion tiene el siguiente cuerpo:</p>
@@ -407,9 +404,9 @@
 						</article>
 				</section>
 				<section class="main-section" id="arreglos_y_apuntadores">
-					<h2>Arreglos y Apuntadores</h2>
+					<header>Arreglos y Apuntadores</header>
 						<article>
-							<header><h3>Arreglos</h3></header>
+							<h3>Arreglos</h3>
 								<p>El lenguaje C++ permite construir estructuras mas complejas a partir sus tipos basicos. Una de las construcciones que podemos definir son los arreglos.</p>
 								<p><strong>Arreglo</strong>: Coleccion ordenada de elementos de un mismo tipo. Ordenada significa que cada elemento tiene una ubicacion determinada dentro del arreglo y debemos conocerla para poder acceder a él.</p>
 								<em>Se define de la siguiente</em>
@@ -436,9 +433,9 @@
 						</article>
 				</section>
 				<section class="main-section" id="manejo_de_memoria_dinamica">
-					<h2>Manejo de Memoria Dinamica</h2>
+					<header>Manejo de Memoria Dinamica</header>
 						<article>
-							<header><h3>Memoria Dinamica</h3></header>
+							<h3>Memoria Dinamica</h3>
 								<p>La memorıa dinamica es un espacio de almacenamiento que se solicita en tiempo de ejecucion. El espacio libre de almacenamiento en C++ se conoce como almacenamiento libre</p>
 								<p>Ademas de solicitar espacios de almacenamiento, tambien podemos liberarlos (en tiempo de ejecucion) cuando dejemos de necesitarlos.<br>
 								Para realizar esta administracion de la memoria dinamica, C++ cuenta con dos operadores para la gestion de memorıa: new y delete que forman parte del lenguaje y no de un librerıa, de modo no se necesitan incluir archivos de encabezados para utilizarlos.</p>
@@ -456,9 +453,9 @@
 						</article>
 				</section>
 				<section class="main-section" id="referencia">
-					<h2>Referencia</h2>
+					<header>Referencia</header>
 						<article>
-							<header><h3>Enlaces</h3></header>
+							<h3>Enlaces</h3>
 								<ul>
 									<li>Para ver mas has click<a href="https://www.uv.es/sto/cursos/c++/curso95.pdf">AQUI</a></li>
 								</ul>
