@@ -178,13 +178,13 @@ tr {
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 490px) {
     .container {
-        width: 500px;
+        width: auto;
     }
 
     #main-doc {
-        width: 500px;
+        width: auto;
     }
 
     #navbar {
@@ -193,7 +193,6 @@ tr {
     }
 
     table.default {
-        margin-left: 41px;
-        margin-right: 29px;
+        margin: auto;
     }
 }
